@@ -1,0 +1,152 @@
+body {
+    background-image: url('/images/bg.jpg');
+    background-repeat:inherit; /* Tidak mengulang gambar */
+    background-position: center center;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 120vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    margin-left:20px; 
+    margin-right:20px;
+}
+
+.container {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    margin: 10px;
+}
+
+.btn {
+    margin: 25px 10px 0px 10px;
+    background-color: #009879;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #06C49D;
+}
+
+.btn-edit {
+    margin: 0px;
+    background-color: #0099CC;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    color: white;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.8;
+}
+
+.btn-delete {
+    margin-left: 8px;
+    background-color: #FD2C2C;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    color: white;
+}
+
+.table-style {
+    border-collapse: collapse;
+    font-size: 16px;
+    min-width: 400px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: justify;
+}
+
+.table-style thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table-style th,
+.table-style td {
+    padding: 12px 15px;
+}
+
+.table-style tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-style tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table-style tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.table-style tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.styled-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.styled-form label {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.styled-form input,
+.styled-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.styled-form input:focus,
+.styled-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.styled-form button {
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.styled-form button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    padding-bottom: 50px;
+}
