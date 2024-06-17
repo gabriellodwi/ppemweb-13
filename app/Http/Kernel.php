@@ -36,7 +36,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            
+
         ],
 
         'api' => [
@@ -66,10 +66,5 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
 
-    protected $routeMiddleware = [
-        // other middlewares
-        'auth' => \App\Http\Middleware\AuthMiddleware::class,
-        'auth.custom_user' => \App\Http\Middleware\RedirectIfNotCustomUser::class,
-    ];
-    
+
 }
