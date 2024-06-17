@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\Models\CustomUser;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,13 @@ class AuthController extends Controller
         ]);
 
         if (Auth::guard('custom_user')->attempt(['email' => $request->email, 'password' => $request->password])) {
+
+            /* @var \App\Models\CustomUser  $customUser  */
+            $customUser = Auth::guard('custom_user')->user();
+            $token = $customUser->createToken('MyApp')->plainTextToken;
+
+            // Store the token for later use, if needed
+            session(['token' => $token]);
             return redirect()->intended('home'); // Redirect to home if login is successful
         }
 
@@ -43,11 +51,13 @@ class AuthController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        CustomUser::create([
+        $customUser = CustomUser::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        event(new Registered($customUser));
 
         return redirect()->route('login');
     }
