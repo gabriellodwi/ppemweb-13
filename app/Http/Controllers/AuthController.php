@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use App\Models\CustomUser;
 use Illuminate\Auth\Events\Registered;
@@ -24,7 +25,7 @@ class AuthController extends Controller
 
         if (Auth::guard('custom_user')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
-            /** @var \App\Models\CustomUser  $customUser  **/
+            /* @var \App\Models\CustomUser  $customUser  */
             $customUser = Auth::guard('custom_user')->user();
             $token = $customUser->createToken('MyApp')->plainTextToken;
 
